@@ -1,4 +1,4 @@
-// legible
+// Recursion
 var tree2str = function(root) {
     let resultsString = ""
     if(!root) return resultsString
@@ -18,4 +18,18 @@ var tree2str = function(root) {
     } else {
         return `${root.val}${resultsString}`   
     }
+};
+
+// Legible
+var tree2str = function(root) {
+    if(!root) return ""
+    const left = tree2str(root.left)
+    const right = tree2str(root.right)
+    if(!left && !right) {
+        return `${root.val}`
+    }
+    if(!right) {
+        return `${root.val}(${left})`
+    }
+    return `${root.val}(${left})(${right})`
 };
