@@ -1,0 +1,17 @@
+var romanToInt = function(s) {
+    let totalCount = 0
+    let romanNum = {"I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000 }
+    for(let i=0;i<s.length;i++){
+        if(i===s.length-1){
+            totalCount+= romanNum[s[i]]
+        } else {
+            if(romanNum[s[i]]>=romanNum[s[i+1]]){
+                totalCount+= romanNum[s[i]]
+            } else {
+                totalCount+= romanNum[s[i+1]] - romanNum[s[i]]
+                i++
+            }
+        }
+    }
+    return totalCount
+};
