@@ -20,3 +20,9 @@ var isPrefixOfWord = function(sentence, searchWord) {
     }
     return result
 };
+
+// optimal
+var isPrefixOfWord = function(sentence, searchWord) {
+    const i = sentence.split(' ').findIndex(str => str.startsWith(searchWord));
+    return i === -1 ? i : i + 1;
+  };
