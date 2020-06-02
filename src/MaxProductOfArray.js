@@ -8,3 +8,8 @@ var maxProduct = function(nums) {
     }
     return max
 };
+
+// optimized
+var maxProduct = function(nums) {
+    return nums.sort((a,b)=>b-a).slice(0,2).reduce((a,b)=>(a-1)*(b-1))
+};
